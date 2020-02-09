@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+locatedb_repos_create: "{{ _locatedb_repos_create['all']
+  | union ( _locatedb_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+locatedb_repos_download: "{{ _locatedb_repos_download['all']
+  | union ( _locatedb_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+locatedb_templates_copy: "{{ _locatedb_templates_copy['all']
+  | union ( _locatedb_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+locatedb_services_enable: "{{ _locatedb_services_enable['all']
+  | union ( _locatedb_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+locatedb_selinux_enable: "{{ _locatedb_selinux_enable['all']
+  | union ( _locatedb_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+locatedb_packages_remove: "{{ _locatedb_packages_remove['all']
+  | union ( _locatedb_packages_remove[my_os]
+  | default([]) ) }}"
+locatedb_packages_repos: "{{ _locatedb_packages_repos['all']
+  | union ( _locatedb_packages_repos[my_os]
+  | default([]) ) }}"
+locatedb_packages_prereq: "{{ _locatedb_packages_prereq['all']
+  | union ( _locatedb_packages_prereq[my_os]
+  | default([]) ) }}"
+locatedb_packages_install: "{{ _locatedb_packages_install['all']
+  | union ( _locatedb_packages_install[my_os]
+  | default([]) ) }}"

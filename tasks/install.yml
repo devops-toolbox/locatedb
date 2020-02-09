@@ -1,0 +1,27 @@
+---
+# Install locatedb packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ locatedb_packages_remove }}"
+    state: absent
+  become: true
+  when: locatedb_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ locatedb_packages_repos }}"
+    state: "{{ locatedb_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ locatedb_packages_prereq }}"
+    state: "{{ locatedb_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ locatedb_packages_install }}"
+    state: "{{ locatedb_packages_state }}"
+  become: true
