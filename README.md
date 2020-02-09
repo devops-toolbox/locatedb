@@ -8,10 +8,10 @@ locatedb: Locatedb
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.locatedb](https://galaxy.ansible.com/devops-toolbox.locatedb)
+[https://galaxy.ansible.com/devopstoolbox.locatedb](https://galaxy.ansible.com/devopstoolbox.locatedb)
 
 ```bash
-ansible-galaxy install devops-toolbox.locatedb
+ansible-galaxy install devopstoolbox.locatedb
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: locatedb is configured
       import_role:
-        name: devops-toolbox.locatedb
+        name: devopstoolbox.locatedb
       vars:
         locatedb_packages_state: present
         locatedb_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
